@@ -1,26 +1,31 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Packages from './components/Packages'
+import Nutrition from './components/Nutrition'
+import Transformations from './components/Transformations'
+import Pricing from './components/Pricing'
+import Contact from './components/Contact'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="bg-black min-h-screen">
+      <Navbar />
+      <main>
+        <Hero />
+        <Packages />
+        <Nutrition />
+        <Transformations />
+        <Pricing />
+        <Contact />
+        <footer className="border-t border-white/10 text-white/60 text-sm">
+          <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              © {new Date().getFullYear()} AURELIA — Elite Fitness
+            </div>
+            <div className="tracking-[0.3em] uppercase text-[10px]">Precision • Discipline • Elegance</div>
+          </div>
+        </footer>
+      </main>
     </div>
   )
 }
